@@ -1,0 +1,17 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function LoadPage() {
+            document.getElementById('content1').src = "test2.html";
+            document.getElementById('content2').src = "findingfriends.html";
+            document.getElementById('content3').src = "http://google.com.hk";
+        }
+    </script>
+    <title></title>
+</head>
+<frameset rows="50%,20%,*" onload="LoadPage();">
+    <frame src="#" id="content1">
+    <frame src="#" id="content2">
+    <frame src="#" id="content3">
+</frameset>
+</html>

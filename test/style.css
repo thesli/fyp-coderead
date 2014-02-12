@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.notavailable {
+    border: 3px #C33 solid !important;
+}
+.available {
+    border: 3px #090 solid !important;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+    <script src="js/main.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="example">
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>General Info</legend>
+
+            <div class="required">
+                <label for="username">Username:</label>
+                <input type="text" required x-moz-errormessage="Enter Username" name="username" id="username" class="inputText" size="10" maxlength="128" value="" />
+            </div>
+
+            <div class="required">
+                <label for="first_name">First Name:</label>
+                <input type="text" required x-moz-errormessage="Enter First Name" name="first_name" id="first_name" class="inputText" size="10" maxlength="128" value="" />
+            </div>
+
+            <div class="required">
+                <label for="last_name">Last Name:</label>
+                <input type="text" required x-moz-errormessage="Enter Second Name" name="last_name" id="last_name" class="inputText" size="10" maxlength="128" value="" />
+            </div>
+
+            <div class="required">
+                <label for="password">Password</label><input type='password' id='p1'><br /><br />
+                <label for="password">Confirm Password</label><input type='password' onfocus="validatePass(document.getElementById('p1'), this);" oninput="validatePass(document.getElementById('p1'), this);"> 
+            </div>
+
+            <div class="required">
+                <label for="email">Email:</label>
+                <input type='email' required pattern=".*@gmail\.com" x-moz-errormessage="Enter your email (gmail.com)" name="email" id="email" class="inputText" size="10" maxlength="128" value="" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Miscellaneous Info</legend>
+
+            <div class="required">
+                <label for="profile_type">Select</label>
+                <select required x-moz-errormessage="Select Your Profile Type" name="profile_type" id="profile_type" size="1">
+                    <option value=""></option>
+                    <option value="single">Single</option>
+                    <option value="couple">Couple</option>
+                </select>
+            </div>
+
+            <div class="optional">
+                <label for="sex">Sex:</label>
+                <input type="radio" required x-moz-errormessage="Select Your Sex" name="sex" id="sex" value="male" /> Male 
+                <input type="radio" required x-moz-errormessage="Select Your Sex" name="sex" id="sex" value="female" /> Female
+            </div>
+
+            <div class="optional">
+                <label for="phone">Phone:</label>
+                <input type="tel" required pattern='\d\d\d \d\d\d \d\d\d\d\d\d' x-moz-errormessage="Enter your Phone number in format 'xxx xxx xxxxxx'" class="inputText" size="10" maxlength="50" value="" />
+            </div>
+            <div class="optional">
+                <label for="url">Website:</label>
+                <input type="url" required x-moz-errormessage="Enter Your Website URL starting with http://" class="inputText" size="10" maxlength="128" value="" />
+            </div>
+
+            <div class="required">
+                <label for="description">Description:</label>
+                <textarea required name="description" id="description" class="inputTextarea" rows="3" cols="51"></textarea>
+            </div>
+
+            <div class="optional">
+                <label for="image">Upload photo:</label>
+                <input type="file" required x-moz-errormessage="Select image file" name="image" id="image" class="inputFile" />
+            </div>
+
+            <div class="optional">
+                <label for="agreement">Subscription:</label>
+                <input type="checkbox" name="subscribe" id="subscribe" value="yes" /> Subscribe to our news
+            </div>
+
+            <div class="required">
+                <label for="agreement">Agreement:</label>
+                <input type="checkbox" required x-moz-errormessage="Need Check It" name="agreement" id="agreement" value="yes" /> I have read and agreed with Terms of Use.
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="submit">
+                <div>
+                    <input type="submit" class="inputSubmit" value="Join Now" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <div style="clear:both"></div>
+</div>
+
+<div style="bottom:0;position:fixed;">
+<hr style="clear:both;" />
+<h4>
+    <a href="http://www.script-tutorials.com/data-validation-html5/">back to original article page</a>
+</h4>
+</div>

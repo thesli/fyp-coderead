@@ -1,0 +1,159 @@
+<!--Created by jaspar on 1/24/14.-->
+<head>
+<title>Welcome to Let's Hangout</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="slide.css"/>
+<link rel="stylesheet" type="text/css" href="stylereg.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="stylelogin.css"/>
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+<script src="bower_components/bootstrap/js/dropdown.js"></script><script src="bower_components/less.js/dist/less-1.5.0.js" data-build="exclude"></script><script src="bower_components/jquery/jquery.js"></script><script src="bower_components/bootstrap/dist/js/bootstrap.js"></script><script src="bower_components/underscore/underscore.js"></script><script src="bower_components/moment/moment.js"></script><script src="bower_components/angular/angular.js"></script><script src="bower_components/angular-route/angular-route.js"></script><script src="bower_components/angular-animate/angular-animate.js"></script><script src="bower_components/angular-resource/angular-resource.js"></script><script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script><script src="bower_components/angular-ui-utils/ui-utils.js"></script><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script><script src="script.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<script src="js/main.js" type="text/javascript"></script>
+<script src="js/check.js" type="text/javascript"></script>
+<!-- validation scripts start here -->
+<script type="text/javascript">
+
+$(document).ready(function(){
+$("#username").keyup(function() {
+var name = $('#username').val();
+
+$.ajax({
+type: "POST",
+url: "check_username.php",
+data: "name="+ name ,
+success: function(response){
+//$("#user-result").html(html);
+check_username(document.getElementById('username'),response);
+}
+});
+return false;
+
+});
+});
+
+</script>
+<!-- validation scripts end here -->
+</head>
+<body>
+   <div id="nav">
+      <nav role="navigation" class="navbar navbar-default">
+         <!--Brand and toggle get grouped for better mobile display-->
+         <div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Home</a></div>
+         <!--Collect the nav links, forms, and other content for toggling-->
+         <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse alert-warning">
+            <ul class="nav navbar-nav">
+               <li><a href="event.html">Event</a></li>
+               <li class="dropdown"></li>
+               <form role="search events" class="navbar-form navbar-left">
+                  <div class="form-group"><input type="text" placeholder="Search Events" class="form-control"/></div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+               </form>
+            <li id="reg_box"><a id="register" href="register.html">Register</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+			
+			<div id="container">
+			
+               <div id="topnav"class="topnav"> Have an account? <a href="login"class="signin"><span>Sign in</span></a> </div>
+  <fieldset id="signin_menu">
+    <form method="post"id="signin"action="https://twitter.com/sessions">
+      <label for="username">Username or email</label>
+      <input id="username"name="username"value=""title="username"tabindex="4"type="text">
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input id="password"name="password"value=""title="password"tabindex="5"type="password">
+      </p>
+      <p class="remember">
+        <input id="signin_submit"value="Sign in"tabindex="6"type="submit">
+        <input id="remember"name="remember_me"value="1"tabindex="7"type="checkbox">
+        <label for="remember">Remember me</label>
+      </p>
+      <p class="forgot"> <a href="#"id="resend_password_link">Forgot your password?</a> </p>
+      <p class="forgot-username"> <A id=forgot_username_link 
+title="If you remember your password, try logging in with your email"
+href="#">Forgot your username?</A> </p>
+    </form>
+  </fieldset></div>
+
+            </ul>
+			 
+         </div>
+      </nav>
+   </div>
+</body>
+<div id="body">
+   <div id="main">
+              <form class="reg_form" name="reg_form" id="reg_form" method="post" action="register_check.php">
+       <legend>General Info</legend>
+       
+      <p class="reg_form_element">  
+      <label for="FirstName">First Name</label>
+      <div id="spacer"></div>
+      <input type="text" name="FirstName" id="FirstName" placeholder="Tai Man" required="required" title="Enter your first name">
+    
+      
+      </p>
+     
+ 	  <p class="reg_form_element">
+      <label for="LastName">Last Name</label>   
+      <div id="spacer"></div>        
+ 	  <input type="text" name="LastName" id="LastName" placeholder="Chan" required="required" title="Enter your last name">
+      </p>
+      
+      <p class="reg_form_element">
+      <label for="username">Desired Username</label>   
+     <div id="spacer"></div>         
+ 	  <input type="text" name="username" id="username"  autocomplete="off" required="required" title="Enter Your Username">
+      </p>
+      
+      <p class="reg_form_element">
+      <label for="password">Password</label>     
+      <div id="spacer"></div>     
+ 	  <input type="password" name = "password" id="password" autocomplete="off" required="required" title="Set your password">
+      </p>
+      
+      <p class="reg_form_element">
+      <label for="cpassword">Confirm Password</label>     
+       <div id="spacer"></div>      
+ 	  <input type="password" name = "cpassword" id="cpassword" autocomplete="off" required="required" title="Re-enter your password" 
+      onfocus="validatePass(document.getElementById('password'), this);" 
+      oninput="validatePass(document.getElementById('password'), this);">
+      </p>
+      
+      <p class="reg_form_element">
+      <label for="EmailAddress">Email Address</label> 
+            <div id="spacer"></div>   
+ 	  <input name="EmailAddress" type="email"id="EmailAddress" placeholder="user@example.com" required="required" title="Enter your email address" >
+      </p>
+     
+	  <p><div id="emailInfo" align="left"></div></p>
+  
+    
+    
+   
+    <legend>Personal Information</legend>
+    
+    <p class="reg_form_element">
+      <label for="info">Information about you:</label>         
+      <div id="spacer"></div>
+ 	  <textarea cols="30" rows="8" name="info" id="info"></textarea>
+      </p>
+    
+   <p class="reg_form_element">
+      <label for="dob">Date of Birth</label>    
+           <div id="spacer"></div>
+ 	  <input name="dob" type="date" id="dob"  required="required"
+      title="Choose your date of birth">
+      </p>
+    
+   <p class="submit">
+     <div id="spacer"></div>
+   <input type="submit" name="submit" id="submit" value="Join Now!">
+   </p>
+  
+ 
+</form>
+   </div>
+   
+</div>

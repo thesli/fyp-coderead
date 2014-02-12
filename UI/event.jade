@@ -1,0 +1,108 @@
+//
+   Created by jaspar on 1/29/14.
+
+head
+    title Welcome to Let's Hangout
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    link(rel='stylesheet', type='text/css', href='css/event.css')
+    link(rel='stylesheet', type='text/css', href='bower_components/bootstrap/dist/css/bootstrap.css')
+    script(src='bower_components/bootstrap/js/dropdown.js')
+    script(src='bower_components/less.js/dist/less-1.5.0.js', data-build='exclude')
+    script(src='bower_components/jquery/jquery.js')
+    script(src='bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='bower_components/underscore/underscore.js')
+    script(src='bower_components/moment/moment.js')
+    script(src='bower_components/angular/angular.js')
+    script(src='bower_components/angular-route/angular-route.js')
+    script(src='bower_components/angular-animate/angular-animate.js')
+    script(src='bower_components/angular-resource/angular-resource.js')
+    script(src='bower_components/angular-bootstrap/ui-bootstrap-tpls.js')
+    script(src='bower_components/angular-ui-utils/ui-utils.js')
+
+body
+    #nav
+        nav.navbar.navbar-default(role='navigation')
+            //
+              Brand and toggle get grouped for better mobile display
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='index.html') Home
+            //
+              Collect the nav links, forms, and other content for toggling
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse.alert-warning
+                ul.nav.navbar-nav
+                    li
+                        a.alert-danger(href='#') Event
+                    li
+                        a(href='start.html') Group
+                    li.dropdown
+                    form.navbar-form.navbar-left(role='search events')
+                        .form-group
+                            input.form-control(type='text', placeholder='Search Events')
+                        button.btn.btn-default(type='submit') Submit
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='logined.html') Login
+                    li.dropdown
+                        a.dropdown-toggle(href='#', data-toggle='dropdown')
+                            | Settings
+                            b.caret
+                        ul.dropdown-menu
+                            li
+                                a(href='#') Personal Settings
+                            li
+                                a(href='#') Privacy Settings
+                            li.divider
+                            li
+                                a(href='#') Log out
+#body
+    #eitem
+        table.alert-warning(border='0', cellpadding='5px')
+            tr
+                td
+                td.name #ename
+            tr
+                td
+                td
+                    img.img-rounded(src='img/ust.jpg')
+                td
+                    p
+                td.information
+                    span.glyphicon.glyphicon-list-alt
+                    span  #edetails
+                    br
+                    br
+                    span.glyphicon.glyphicon-time
+                    span #ewhen
+                    br
+                    br
+                    span.glyphicon.glyphicon-home
+                    span #ewhere
+            tr
+        table.alert-warning(border='0', cellpadding='5px')
+            tr
+                td
+                td.name #ename
+            tr
+                td
+                td
+                    img.img-rounded(src='img/ust2.jpg')
+                td
+                    p
+                td.information
+                    span.glyphicon.glyphicon-list-alt
+                    span  #edetails
+                    br
+                    br
+                    span.glyphicon.glyphicon-time
+                    span #ewhen
+                    br
+                    br
+                    span.glyphicon.glyphicon-home
+                    span #ewhere
+            tr
+                td
