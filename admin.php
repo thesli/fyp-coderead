@@ -71,6 +71,29 @@ $myACL = new ACL();
 			echo "\" width=\"16\" height=\"16\" alt=\"$pVal\" /><br />";
 		}
 	  ?> </h1>
+<!-- for someone like you might not know you can do something like this
+
+<?php
+$xxx = "xxx";
+if($bool){ ?>
+
+<h1>the bool is true</h1>
+
+<?php } else { ?>
+
+<h1>the bool is false and $xxx is <?= $xxx ?> </h1>
+
+<?php } ?>
+
+that will do exactly the same thing as you do above,which look a lot nicer,
+it worked in for loop while loop foreach and the like.
+
+note1 that <?= $xxx ?> is a short tag for <? echo $xxx ?> you need to set something on php.ini before like PHP4 or something,some server won't support it.
+note2 In common MVC framework,templating is avaliable,so you can just use things like #{user.name} or {{user.name}} to represent your variables.
+note3 <? ?> is a shorthand for <?php ?>
+
+I covered this technique for the first PHP class for jaspar,It looked like way too advanced for you though.
+-->
       </div>
       
       <div id="content_right">
