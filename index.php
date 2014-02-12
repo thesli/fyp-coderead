@@ -2,10 +2,11 @@
 session_start();
 if(isset($_SESSION['first_name'])){
 	header("Location: login_success.php");
+// the logic here is wired,why provided first_name exist and then redirect to login_success? using before_filters and similar things in PHP framework such as llarvel to handle the problem
 	exit();
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- this is not a standard way of using HTML5, prefer <!doctype html>,visit https://github.com/h5bp/html5-boilerplate/blob/master/index.html for a standard html5 boilerplate -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,6 +34,7 @@ if(isset($_SESSION['first_name'])){
       <h4>Latest Work</h4>
       <div class="item_box">
       <img src="images/t1.jpg" width="200" height="70" border="0" alt="Dragon" title="Dragon" /><br />
+<!-- inline css property is strongly discouraged as it is against the D.R.Y rulehere you repeated the same width,height multiple time,use class instead. -->
       <strong>Dragon</strong> </div>
       <div class="item_box">
       <img src="images/t2.jpg" width="200" height="70" border="0" alt="Bricks" title="Bricks" /><br />
